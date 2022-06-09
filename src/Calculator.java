@@ -16,7 +16,7 @@ public class Calculator {
             String[] arabic = str.split("\\+|\\-|\\/|\\*");     // достаём числа из строки
             first = Integer.parseInt(arabic[0]);
             second = Integer.parseInt(arabic[1]);
-        } else if (str.matches("[IVXLC]+(\\+|\\-|\\/|\\*)[IVXLC]+")) {  // если римские
+        } else if (str.matches("[IVX]+(\\+|\\-|\\/|\\*)[IVX]+")) {  // если римские
             isRoman = true;
             String[] roman = str.split("\\+|\\-|\\/|\\*");
             first = toArabic(roman[0]);
