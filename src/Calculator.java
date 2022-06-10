@@ -24,6 +24,10 @@ public class Calculator {
         } else {
             throw new Exception("Формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
         }
+        
+        if (first<1 || first>10 || second<1 || second>10) {
+            throw new Exception("Принимаются числа от 1 до 10 включительно.");
+        }
 
         if (str.contains("+")) {
             result = first + second;
@@ -38,6 +42,9 @@ public class Calculator {
                 throw new Exception("В римской системе нет отрицательных чисел.");
             } else {
                 result = first - second;
+                if (isRoman && result == 0) {
+                    throw new Exception("В римской системе нет нуля.");
+                }
             }
         }
 
